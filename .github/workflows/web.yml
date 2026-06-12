@@ -22,9 +22,7 @@ jobs:
             - name: Verify pnpm
               run: pnpm -v
             - name: Install dependencies
-              run: pnpm install --frozen-lockfile --config.confirmModulesPurge=false
-            - name: Approve builds
-              run: pnpm approve-builds -y
+              run: pnpm install
             - name: Type check
               run: pnpm check-types
             - name: Lint
