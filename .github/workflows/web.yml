@@ -29,6 +29,5 @@ jobs:
               run: pnpm lint
             - name: Build
               run: pnpm --filter web build
-            - name: Deploy to Vercel
+            - name: Deploy
               run: npx vercel deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN_WEB_FRAMEFORGE }}
-              working-directory: apps/web
