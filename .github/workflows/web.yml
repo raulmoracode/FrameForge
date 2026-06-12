@@ -30,5 +30,5 @@ jobs:
             - name: Build
               run: pnpm --filter web build
             - name: Deploy to Vercel
-              run: pnpm vercel build --prod --cwd apps/web --token=${{ secrets.VERCEL_TOKEN_WEB_FRAMEFORGE }} && pnpm vercel deploy --prod --prebuilt --cwd apps/web --token=${{ secrets.VERCEL_TOKEN_WEB_FRAMEFORGE }}
+              run: npx vercel deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN_WEB_FRAMEFORGE }}
               working-directory: apps/web
