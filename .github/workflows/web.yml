@@ -19,21 +19,30 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
+          cache: pnpm
 
-      - run: node -v
+      - name: Verify Node
+        run: node -v
 
-      - uses: pnpm/action-setup@v4
-        with:
-          run_install: false
+      - name: Enable Corepack
+        run: |
+          corepack enable
+          corepack install
 
-      - run: pnpm -v
+      - name: Verify pnpm
+        run: pnpm -v
 
-      - run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - run: pnpm check-types
+      - name: Type check
+        run: pnpm check-types
 
-      - run: pnpm lint
+      - name: Lint
+        run: pnpm lint
 
-      - run: pnpm --filter web build
+      - name: Build
+        run: pnpm --filter web build
 
-      - run: pnpm dlx vercel deploy --prod --yes --cwd apps/web --token=${{ secrets.VERCEL_TOKEN_WEB_FRAMEFORGE }}
+      - name: Deploy
+        run: pnpm dlx vercel deploy --prod --yes --cwd apps/web --token=${{ secrets.VERCEL_TOKEN_WEB_FRAMEFORGE }}
