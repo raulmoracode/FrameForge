@@ -22,7 +22,9 @@ jobs:
             - name: Verify pnpm
               run: pnpm -v
             - name: Install dependencies
-              run: pnpm install --frozen-lockfile --ignore-scripts
+              run: pnpm install --frozen-lockfile --config.confirmModulesPurge=false
+            - name: Approve builds
+              run: echo "esbuild" | pnpm approve-builds
             - name: Type check
               run: pnpm check-types
             - name: Lint
