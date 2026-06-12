@@ -2,7 +2,8 @@ name: Deploy Web
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 concurrency:
   group: deploy-web
@@ -11,24 +12,29 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - uses: actions/checkout@v4
 
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 22.13
-        cache: pnpm
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: pnpm
 
-    - uses: pnpm/action-setup@v4
-      with:
-        run_install: false
+      - run: node -v
 
-    - run: corepack enable
-    - run: pnpm install --frozen-lockfile
-    - run: pnpm check-types
-    - run: pnpm lint
-    - run: pnpm --filter web build
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
 
-    - run: pnpm dlx vercel --prod --token=${{ secrets.VERCEL_TOKEN_WEB_FRAMEFORGE }} --cwd apps/web
+      - run: pnpm -v
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm check-types
+
+      - run: pnpm lint
+
+      - run: pnpm --filter web build
+
+      - run: pnpm dlx vercel deploy --prod --yes --cwd apps/web --token=${{ secrets.VERCEL_TOKEN_WEB_FRAMEFORGE }}
