@@ -1,0 +1,8 @@
+{
+	"name": "@repo/vitest-config",
+	"version": "1.0.0",
+	"private": true,
+	"exports": {
+		"./vitest": "./vitest.base.ts"
+	}
+}

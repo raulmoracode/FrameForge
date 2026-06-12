@@ -1,0 +1,21 @@
+export const es = {
+	SectionCancelled: "Sección cancelada",
+	selectVariant: "Selecciona un template",
+	selectPackageManager: "Selecciona un gestor de paquetes",
+	projectName: "Nombre del proyecto",
+	projectPlaceHolder: "mi-proyecto",
+	projectNameInvalid: "El nombre del proyecto no es válido",
+	selectFramework: "Selecciona un framework",
+	selectMode: "Elige el modo",
+	modeNormal: "Normal (prompts del CLI del framework)",
+	modeFlags: "Avanzado (elegir flags)",
+	checkingConnection: "Comprobando conexión a internet...",
+	online: "Conectado — ejecutando generador nativo",
+	offline:
+		"Sin conexión a internet. El modo Docker offline aún no está disponible.",
+	creatingProject: "Creando tu proyecto",
+	applyingHooks: "Aplicando hooks post-instalación...",
+	hooksApplied: "Hooks post-instalación aplicados",
+	successCreated: "¡Proyecto creado con éxito! 🎉",
+	runNext: "Para empezar:",
+};

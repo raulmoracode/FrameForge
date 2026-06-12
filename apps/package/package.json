@@ -1,0 +1,55 @@
+{
+	"name": "raulmoracode-frameforge",
+	"version": "1.0.0",
+	"description": "Create frontend projects with any framework and package manager — online or offline.",
+	"license": "MIT",
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/raulmoracode/frameforge.git"
+	},
+	"homepage": "https://frameforge.raulmoracode.com",
+	"main": "src/cli.ts",
+	"bin": {
+		"create-frameforge": "dist/cli.js"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc",
+		"check-types": "tsc --noEmit",
+		"lint": "biome check src/",
+		"format": "biome format --write src/",
+		"start": "node dist/cli.js",
+		"prepublishOnly": "tsc"
+	},
+	"dependencies": {
+		"@clack/prompts": "^1.1.0",
+		"chalk": "^5.6.2",
+		"commander": "^14.0.3",
+		"gradient-string": "^3.0.0",
+		"ora": "^9.3.0"
+	},
+	"devDependencies": {
+		"@repo/vitest-config": "workspace:*",
+		"@types/gradient-string": "^1.1.6",
+		"commitizen": "^4.3.1",
+		"cz-conventional-changelog": "^3.3.0",
+		"lint-staged": "^16.3.2",
+		"standard-version": "^9.5.0"
+	},
+	"keywords": [
+		"create",
+		"scaffold",
+		"frontend",
+		"react",
+		"vue",
+		"svelte",
+		"next",
+		"nuxt",
+		"astro",
+		"vite",
+		"cli"
+	]
+}

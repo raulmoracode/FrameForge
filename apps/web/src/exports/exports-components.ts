@@ -1,0 +1,9 @@
+export { default as CTA } from "@/components/sections/CallToAction.js";
+export { default as Demo } from "@/components/sections/Demo.js";
+export { default as Features } from "@/components/sections/Features.js";
+export { default as Footer } from "@/components/sections/Footer.js";
+export { default as Frameworks } from "@/components/sections/Frameworks.js";
+export { default as GettingStarted } from "@/components/sections/GettingStarted.js";
+export { default as Hero } from "@/components/sections/Hero.js";
+export { default as Nav } from "@/components/sections/Nav.js";
+export { default as Roadmap } from "@/components/sections/Roadmap.js";

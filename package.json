@@ -1,0 +1,25 @@
+{
+	"name": "raulmoracode-frameforge",
+	"private": true,
+	"scripts": {
+		"dev": "turbo run dev",
+		"build": "turbo run build",
+		"lint": "turbo run lint",
+		"check-types": "turbo run check-types",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.5",
+		"@commitlint/cli": "21.0.2",
+		"@commitlint/config-conventional": "21.0.2",
+		"@types/node": "^25.9.2",
+		"husky": "^9.1.7",
+		"turbo": "^2.9.16",
+		"typescript": "6.0.3",
+		"vitest": "4.1.8"
+	},
+	"packageManager": "pnpm@11.0.0",
+	"engines": {
+		"node": "22"
+	}
+}
